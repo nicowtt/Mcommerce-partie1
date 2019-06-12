@@ -119,8 +119,15 @@ public class ProductController {
     }
 
 
-
     //todo Partie 2: pour retourner la liste de tous les produits triés par nom croissant
+    @GetMapping(value = "/ProduitsTries")
+    public List<Product> trierProduitsParOrdreAlphabetique() {
+
+        List<Product> produitsTries = productDao.findAllByOrderByNomAsc();
+
+        return produitsTries;
+
+    }
 
 
 
