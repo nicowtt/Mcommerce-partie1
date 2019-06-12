@@ -16,10 +16,11 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 
-@Api( description="API pour es opérations CRUD sur les produits.")
+@Api( description="API pour les opérations CRUD sur les produits.")
 
 @RestController
 public class ProductController {
@@ -100,8 +101,26 @@ public class ProductController {
     @GetMapping(value = "test/produits/{prix}")
     public List<Product>  testeDeRequetes(@PathVariable int prix) {
 
-        return productDao.chercherUnProduitCher(400);
+        return productDao.chercherUnProduitCher(prix);
     }
+
+    //Partie 1: pour calculer la marge de chaque produit (différence entre prix d‘achat et prix de vente).
+    @GetMapping(value = "/AdminProduits")
+    public List<Product> calculerMargeProduit() {
+        int marge;
+
+        List<Product> allProduct = productDao.findAll();
+
+        for (Product product : allProduct) {
+            marge = product.getPrix() - product.getPrixAchat();
+            product.setMarge(marge);
+        }
+        return allProduct;
+    }
+
+
+
+    //todo Partie 2: pour retourner la liste de tous les produits triés par nom croissant
 
 
 
