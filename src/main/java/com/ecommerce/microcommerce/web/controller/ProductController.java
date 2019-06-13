@@ -3,6 +3,7 @@ package com.ecommerce.microcommerce.web.controller;
 import com.ecommerce.microcommerce.dao.ProductDao;
 import com.ecommerce.microcommerce.model.Product;
 import com.ecommerce.microcommerce.web.exceptions.ProduitIntrouvableException;
+import com.ecommerce.microcommerce.web.exceptions.ProduitSansPrixVente;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
@@ -44,6 +45,13 @@ public class ProductController {
         MappingJacksonValue produitsFiltres = new MappingJacksonValue(produits);
 
         produitsFiltres.setFilters(listDeNosFiltres);
+
+        //Partie 3:lancer une exception si le prix de vente = 0
+        for (Product produit : produits) {
+            if (produit.getPrix() == 0) {
+                throw new ProduitSansPrixVente("Le produit avec l'id "+ produit.getId() +" n'a pas de prix de vente !");
+            }
+        }
 
         return produitsFiltres;
     }
@@ -119,7 +127,7 @@ public class ProductController {
     }
 
 
-    //todo Partie 2: pour retourner la liste de tous les produits triés par nom croissant
+    //Partie 2: pour retourner la liste de tous les produits triés par nom croissant
     @GetMapping(value = "/ProduitsTries")
     public List<Product> trierProduitsParOrdreAlphabetique() {
 
