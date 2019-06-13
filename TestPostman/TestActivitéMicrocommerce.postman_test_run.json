@@ -1,0 +1,163 @@
+{
+	"id": "ac4d6106-21a2-456d-98bc-123ae95ec510",
+	"name": "TestActivitéMicrocommerce",
+	"allTests": [],
+	"timestamp": "2019-06-13T07:17:30.648Z",
+	"collection_id": "d3aef57c-c8d6-423a-b0a3-fe71d8b6ba40",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "d3aef57c-c8d6-423a-b0a3-fe71d8b6ba40",
+		"name": "TestActivitéMicrocommerce",
+		"description": "",
+		"auth": null,
+		"events": null,
+		"variables": [],
+		"order": [
+			"93ec53cd-f745-475c-8a36-ec0063262b7b",
+			"a70332db-3e92-4db6-8e87-d746abf7f672",
+			"a2d58cbf-8be4-45a5-960e-d90c9f46a946"
+		],
+		"folders_order": [],
+		"owner": "7800048",
+		"favorite": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "Partie1: Affichage de la marge",
+			"id": "93ec53cd-f745-475c-8a36-ec0063262b7b",
+			"url": "localhost:9090/AdminProduits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"9"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "9",
+			"totalRequestTime": "9",
+			"iterationResults": {}
+		},
+		{
+			"name": "Partie2: Trie par ordre alphabétique (sur \"nom\")",
+			"id": "a70332db-3e92-4db6-8e87-d746abf7f672",
+			"url": "localhost:9090/ProduitsTries",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"7"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "7",
+			"totalRequestTime": "7",
+			"iterationResults": {}
+		},
+		{
+			"name": "Partie3: Validation du prix de vente (id3)",
+			"id": "a2d58cbf-8be4-45a5-960e-d90c9f46a946",
+			"url": "localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"8"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "8",
+			"totalRequestTime": "8",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 0,
+	"totalFail": 0,
+	"totalTime": 24,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Partie1: Affichage de la marge",
+			"id": "93ec53cd-f745-475c-8a36-ec0063262b7b",
+			"url": "localhost:9090/AdminProduits",
+			"time": "2019-06-13T07:17:30.648Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Partie2: Trie par ordre alphabétique (sur \"nom\")",
+			"id": "a70332db-3e92-4db6-8e87-d746abf7f672",
+			"url": "localhost:9090/ProduitsTries",
+			"time": "2019-06-13T07:17:30.648Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Partie3: Validation du prix de vente (id3)",
+			"id": "a2d58cbf-8be4-45a5-960e-d90c9f46a946",
+			"url": "localhost:9090/Produits",
+			"time": "2019-06-13T07:17:30.648Z",
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"testPassFailCounts": {}
+		}
+	],
+	"synced": false
+}
