@@ -1,12 +1,10 @@
 package com.ecommerce.microcommerce.model;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
 
 @Entity
 //@JsonFilter("monFiltreDynamique")
@@ -24,18 +22,18 @@ public class Product {
 
     //information que nous ne souhaitons pas exposer
     private int prixAchat;
-    private int marge;
+
+    
 
     //constructeur par défaut
     public Product() {
     }
 
     //constructeur pour nos tests
-    public Product(String nom, int prix, int prixAchat, int marge) {
+    public Product(String nom, int prix, int prixAchat) {
         this.nom = nom;
         this.prix = prix;
         this.prixAchat = prixAchat;
-        this.marge = marge;
     }
 
     public int getId() {
@@ -68,14 +66,6 @@ public class Product {
 
     public void setPrixAchat(int prixAchat) {
         this.prixAchat = prixAchat;
-    }
-
-    public int getMarge() {
-        return marge;
-    }
-
-    public void setMarge(int marge) {
-        this.marge = marge;
     }
 
     @Override

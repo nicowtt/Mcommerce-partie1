@@ -114,16 +114,21 @@ public class ProductController {
 
     //Partie 1: pour calculer la marge de chaque produit (différence entre prix d‘achat et prix de vente).
     @GetMapping(value = "/AdminProduits")
-    public List<Product> calculerMargeProduit() {
+    public String calculerMargeProduit() {
         int marge;
 
-        List<Product> allProduct = productDao.findAll();
+        List<Product> produits = productDao.findAll();
 
-        for (Product product : allProduct) {
-            marge = product.getPrix() - product.getPrixAchat();
-            product.setMarge(marge);
+        String response = "";
+
+        for (Product produit : produits ){
+            int price = produit.getPrix();
+            int buyingPrice = produit.getPrixAchat();
+            response += productDao.findById(produit.getId())
+                    + ": " + (price-buyingPrice);
+            response += "\n";
         }
-        return allProduct;
+        return response;
     }
 
 
