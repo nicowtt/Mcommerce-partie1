@@ -57,7 +57,7 @@ public class ProductController {
     }
 
 
-    //Récupérer un produit par son Id (test sourcetree commit)
+    //Récupérer un produit par son Id (mod)
     @ApiOperation(value = "Récupère un produit grâce à son ID à condition que celui-ci soit en stock!")
     @GetMapping(value = "/Produits/{id}")
 
